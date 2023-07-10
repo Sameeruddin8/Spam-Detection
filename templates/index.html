@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>SMS Spam Detection</title>
+    <link rel="stylesheet" href="static/style.css">
+</head>
+<body>
+    <div class="container">
+        <img src="/static/background.jpg" alt="Background Image" class="background">
+        <div class="form">
+            <h1 class="title">SMS Spam Detection</h1>
+            <form class="input-container", action = "{{url_for('predict')}}" method = 'post'>
+                <input type="text" id="sms-text" placeholder="Enter SMS text", name="sms">
+                <button type="submit" id="predict-button">Predict</button>
+            </form>
+            <h1>{{predicteeeed}}</h1>
+            {% if confidence %}
+            <p>Confidence Level: {{ confidence }}%</p>
+            {% endif %}
+        </div>
+    </div>
+    
+</body>
+</html>
