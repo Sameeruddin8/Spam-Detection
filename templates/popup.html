@@ -1,3 +1,4 @@
+<!-- popup.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,25 +11,15 @@
         <img src="/static/background.jpg" alt="Background Image" class="background">
         <div class="form">
             <h1 class="title">SMS Spam Detection</h1>
-            <form class="input-container", action = "{{url_for('predict')}}" method = 'post'>
-                <input type="text" id="sms-text" placeholder="Enter SMS text", name="sms">
-                <button type="submit" id="predict-button">Predict</button>
-            </form>
-            <h1>{{predicteeeed}}</h1>
-            {% if confidence %}
-            <p>Confidence Level: {{ confidence }}%</p>
-            {% endif %}
             <form class="input-container" id="smsForm">
                 <input type="text" id="sms-text" placeholder="Enter SMS text" name="sms">
                 <button type="button" id="predict-button">Predict</button>
             </form>
             <h1 id="prediction"></h1>
-            {% if confidence %}
-            <p>Confidence Level: <span id="confidence">{{ confidence }}%</span></p>
-            {% endif %}
+            <p>Confidence Level: <span id="confidence"></span></p>
         </div>
-        
     </div>
     
+    <script src="popup.js"></script>
 </body>
 </html>
